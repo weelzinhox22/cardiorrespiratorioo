@@ -1,9 +1,30 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, Brain } from 'lucide-react';
+import { BookOpen, Brain, MessageCircle } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { 
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle, 
+  DialogDescription,
+  DialogFooter
+} from '@/components/ui/dialog';
+import { Button } from '@/components/ui/button';
 
 const Index = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  useEffect(() => {
+    // Mostrar o diálogo quando o componente for montado
+    setIsDialogOpen(true);
+  }, []);
+
+  const handleWhatsAppContact = () => {
+    window.open('https://wa.me/5571991373142?text=Olá,%20estou%20com%20dúvidas%20sobre%20o%20conteúdo%20da%20plataforma%20FisioCardio', '_blank');
+  };
+
   const features = [
     {
       icon: BookOpen,
@@ -23,6 +44,42 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-medical-lightBlue via-white to-medical-lightTeal">
       <Navigation />
       <Hero />
+      
+      {/* Popup de Aviso */}
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="text-xl sm:text-2xl font-bold text-center text-medical-blue">
+              Informação Importante
+            </DialogTitle>
+            <DialogDescription className="text-center pt-4">
+              <p className="mb-4 text-base text-gray-700">
+                Todo o conteúdo deste site foi retirado das aulas da professora <span className="font-semibold">Eloá Queiroz</span>.
+              </p>
+              <p className="text-base text-gray-700">
+                Em caso de dúvidas, questões incorretas ou problemas, entre em contato:
+              </p>
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center py-2">
+            <Button 
+              onClick={handleWhatsAppContact}
+              className="bg-green-600 hover:bg-green-700 text-white flex items-center gap-2"
+            >
+              <MessageCircle size={18} />
+              Contato via WhatsApp (71) 99137-3142
+            </Button>
+          </div>
+          <DialogFooter className="sm:justify-center mt-4">
+            <Button 
+              onClick={() => setIsDialogOpen(false)}
+              variant="outline"
+            >
+              Entendi
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
       
       {/* Features Section */}
       <section className="py-10 sm:py-16 md:py-20 bg-white/50">
@@ -84,6 +141,15 @@ const Index = () => {
             <div className="border-t border-gray-800 pt-4 sm:pt-6">
               <p className="text-xs sm:text-sm text-gray-400">
                 © 2025 FisioCardio Pro. Todos os direitos reservados.
+              </p>
+              <p className="text-xs sm:text-sm text-gray-400 mt-2">
+                <button 
+                  onClick={handleWhatsAppContact}
+                  className="text-medical-teal hover:underline flex items-center gap-1 mx-auto mt-2"
+                >
+                  <MessageCircle size={14} />
+                  Dúvidas ou problemas? Entre em contato: (71) 99137-3142
+                </button>
               </p>
             </div>
           </div>
