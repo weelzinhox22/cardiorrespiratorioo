@@ -758,42 +758,43 @@ const Quiz = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-medical-lightBlue via-white to-medical-lightTeal">
+    <div className="min-h-screen bg-gradient-to-br from-medical-lightBlue via-white to-medical-lightTeal pt-16">
       <Navigation />
       
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900">
+      <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-12">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-4xl font-bold text-gray-900">
             Avaliação de Conhecimentos
-          </h1>
-          <p className="mt-2 text-lg text-gray-600">
+            </h1>
+          <p className="mt-2 text-sm sm:text-lg text-gray-600">
             Responda todas as questões para avaliar seu conhecimento
           </p>
           <Button 
             onClick={generatePDF}
             disabled={isGeneratingPDF}
-            className="mt-4 bg-indigo-600 hover:bg-indigo-700 flex items-center mx-auto"
+            className="mt-4 bg-indigo-600 hover:bg-indigo-700 flex items-center mx-auto text-xs sm:text-sm py-1 px-2 sm:py-2 sm:px-4"
+            size="sm"
           >
-            <FileDown className="mr-2 h-4 w-4" />
+            <FileDown className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
             {isGeneratingPDF ? "Gerando PDF..." : "Baixar Questionário em PDF"}
           </Button>
-        </div>
-
+          </div>
+          
         {!showResults ? (
           <>
-            <div className="mb-6">
-              <div className="flex justify-between text-sm text-gray-600 mb-2">
+            <div className="mb-4 sm:mb-6">
+              <div className="flex justify-between text-xs sm:text-sm text-gray-600 mb-1 sm:mb-2">
                 <span>Progresso: {progress.toFixed(0)}%</span>
                 <span>Questões respondidas: {Object.keys(selectedAnswers).length} de {randomizedQuestions.length}</span>
               </div>
               <Progress value={progress} className="h-2" />
             </div>
 
-            <Card className="mb-8">
-              <CardHeader>
-                <CardTitle className="flex justify-between items-center">
-                  <span>Questão {currentQuestion + 1} de {randomizedQuestions.length}</span>
-                  <span className={`text-sm px-3 py-1 rounded-full ${
+            <Card className="mb-6 sm:mb-8 shadow-md">
+              <CardHeader className="p-3 sm:p-6">
+                <CardTitle className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
+                  <span className="text-base sm:text-lg">Questão {currentQuestion + 1} de {randomizedQuestions.length}</span>
+                  <span className={`text-xs sm:text-sm px-2 sm:px-3 py-0.5 sm:py-1 rounded-full ${
                     isQuestionAnswered(currentQuestion) 
                       ? "bg-green-100 text-green-800" 
                       : "bg-amber-100 text-amber-800"
@@ -802,28 +803,32 @@ const Quiz = () => {
                   </span>
                 </CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="space-y-6">
-                  <p className="text-lg font-medium">{randomizedQuestions[currentQuestion].question}</p>
+              <CardContent className="p-3 sm:p-6 pt-0 sm:pt-0">
+                <div className="space-y-4 sm:space-y-6">
+                  <p className="text-sm sm:text-lg font-medium">{randomizedQuestions[currentQuestion].question}</p>
                   
                   <RadioGroup
                     value={getCurrentQuestionValue()}
                     onValueChange={handleAnswerSelect}
-                    className="space-y-3"
+                    className="space-y-2 sm:space-y-3"
                     disabled={questionState === 'reviewing'}
                   >
                     {randomizedQuestions[currentQuestion].options.map((option, index) => (
                       <div 
                         key={index} 
-                        className={`flex items-center space-x-2 p-3 rounded-lg transition-colors
+                        className={`flex items-start space-x-2 p-2 sm:p-3 rounded-lg transition-colors
                           ${getCurrentQuestionValue() === index.toString() 
                             ? 'bg-medical-lightBlue/20 border border-medical-blue' 
                             : 'hover:bg-gray-50 border border-transparent'}`}
                       >
-                        <RadioGroupItem value={index.toString()} id={`q${currentQuestion}-${index}`} />
+                        <RadioGroupItem 
+                          value={index.toString()} 
+                          id={`q${currentQuestion}-${index}`} 
+                          className="mt-1"
+                        />
                         <Label 
                           htmlFor={`q${currentQuestion}-${index}`} 
-                          className="text-base flex-grow cursor-pointer"
+                          className="text-xs sm:text-base flex-grow cursor-pointer"
                         >
                           {option}
                         </Label>
@@ -833,20 +838,20 @@ const Quiz = () => {
 
                   {/* Explanation shown only in reviewing state */}
                   {questionState === 'reviewing' && (
-                    <Alert className={isCurrentAnswerCorrect() ? "bg-green-50 border-green-200 text-green-800" : "bg-red-50 border-red-200 text-red-800"}>
+                    <Alert className={isCurrentAnswerCorrect() ? "bg-green-50 border-green-200 text-green-800 text-xs sm:text-sm" : "bg-red-50 border-red-200 text-red-800 text-xs sm:text-sm"}>
                       <div className="flex items-start">
                         {isCurrentAnswerCorrect() ? (
-                          <CheckCircle2 className="h-5 w-5 mr-2 text-green-600 mt-0.5" />
+                          <CheckCircle2 className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2 text-green-600 mt-0.5 flex-shrink-0" />
                         ) : (
-                          <XCircle className="h-5 w-5 mr-2 text-red-600 mt-0.5" />
+                          <XCircle className="h-4 w-4 sm:h-5 sm:w-5 mr-1 sm:mr-2 text-red-600 mt-0.5 flex-shrink-0" />
                         )}
                         <div>
-                          <AlertTitle className="font-semibold">
+                          <AlertTitle className="font-semibold text-xs sm:text-sm">
                             {isCurrentAnswerCorrect() ? "Resposta correta!" : "Resposta incorreta"}
                           </AlertTitle>
-                          <AlertDescription className="mt-2">
+                          <AlertDescription className="mt-1 sm:mt-2 text-xs sm:text-sm">
                             {!isCurrentAnswerCorrect() && (
-                              <p className="mb-2">
+                              <p className="mb-1 sm:mb-2">
                                 A resposta correta é: <span className="font-medium">{randomizedQuestions[currentQuestion].options[randomizedQuestions[currentQuestion].correctIndex]}</span>
                               </p>
                             )}
@@ -857,12 +862,13 @@ const Quiz = () => {
                     </Alert>
                   )}
 
-                  <div className="flex justify-between mt-6">
+                  <div className="flex justify-between mt-4 sm:mt-6">
                     <Button
                       onClick={handlePrevious}
                       disabled={currentQuestion === 0}
                       variant="outline"
-                      className="w-28"
+                      className="w-24 sm:w-28 text-xs sm:text-sm py-1 px-2 h-auto sm:h-10"
+                      size="sm"
                     >
                       Anterior
                     </Button>
@@ -871,7 +877,8 @@ const Quiz = () => {
                       <Button
                         onClick={handleConfirmAnswer}
                         disabled={currentSelection === null}
-                        className="w-28 bg-medical-blue hover:bg-medical-blue/90"
+                        className="w-24 sm:w-28 bg-medical-blue hover:bg-medical-blue/90 text-xs sm:text-sm py-1 px-2 h-auto sm:h-10"
+                        size="sm"
                       >
                         Confirmar
                       </Button>
@@ -880,15 +887,17 @@ const Quiz = () => {
                         <Button
                           onClick={handleNext}
                           variant="default"
-                          className="w-28 flex items-center justify-center"
+                          className="w-24 sm:w-28 flex items-center justify-center text-xs sm:text-sm py-1 px-2 h-auto sm:h-10"
+                          size="sm"
                         >
-                          Próxima <ArrowRight className="ml-1 h-4 w-4" />
+                          Próxima <ArrowRight className="ml-1 h-3 w-3 sm:h-4 sm:w-4" />
                         </Button>
                       ) : (
                         <Button
                           onClick={handleSubmit}
                           disabled={Object.keys(selectedAnswers).length < randomizedQuestions.length}
-                          className="w-28 bg-green-600 hover:bg-green-700"
+                          className="w-24 sm:w-28 bg-green-600 hover:bg-green-700 text-xs sm:text-sm py-1 px-2 h-auto sm:h-10"
+                          size="sm"
                         >
                           Finalizar
                         </Button>
@@ -900,40 +909,41 @@ const Quiz = () => {
             </Card>
           </>
         ) : (
-          <Card>
-            <CardHeader>
-              <CardTitle>Resultados</CardTitle>
+          <Card className="shadow-md">
+            <CardHeader className="p-4 sm:p-6">
+              <CardTitle className="text-lg sm:text-xl">Resultados</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="p-4 sm:p-6 pt-0 sm:pt-0">
               <div className="text-center space-y-4">
-                <div className="mb-8">
-                  <p className="text-4xl font-bold text-medical-blue mb-2">
+                <div className="mb-6 sm:mb-8">
+                  <p className="text-2xl sm:text-4xl font-bold text-medical-blue mb-1 sm:mb-2">
                     {((calculateScore() / randomizedQuestions.length) * 100).toFixed(1)}%
                   </p>
-                  <p className="text-xl text-gray-600">
+                  <p className="text-sm sm:text-xl text-gray-600">
                     Você acertou {calculateScore()} de {randomizedQuestions.length} questões
                   </p>
                   
-                  <div className="mt-6 flex justify-center">
+                  <div className="mt-4 sm:mt-6 flex justify-center">
                     <Button 
                       onClick={generatePDF}
                       disabled={isGeneratingPDF}
-                      className="bg-indigo-600 hover:bg-indigo-700 flex items-center"
+                      className="bg-indigo-600 hover:bg-indigo-700 flex items-center text-xs sm:text-sm py-1 px-2 sm:py-2 sm:px-4"
+                      size="sm"
                     >
-                      <FileDown className="mr-2 h-4 w-4" />
+                      <FileDown className="mr-1 sm:mr-2 h-3 w-3 sm:h-4 sm:w-4" />
                       {isGeneratingPDF ? "Gerando PDF..." : "Baixar Gabarito em PDF"}
                     </Button>
                   </div>
                 </div>
                 
-                <div className="mt-8">
-                  <h3 className="text-xl font-semibold mb-4">Revisão das Questões</h3>
-                  <ScrollArea className="h-[400px] rounded-md border p-4">
+                <div className="mt-6 sm:mt-8">
+                  <h3 className="text-base sm:text-xl font-semibold mb-3 sm:mb-4">Revisão das Questões</h3>
+                  <ScrollArea className="h-[300px] sm:h-[400px] rounded-md border p-2 sm:p-4">
                     {randomizedQuestions.map((q, index) => (
-                      <div key={index} className="mb-6 p-4 border-b last:border-b-0">
+                      <div key={index} className="mb-4 sm:mb-6 p-3 sm:p-4 border-b last:border-b-0">
                         <div className="flex items-center justify-between mb-2">
-                          <span className="font-medium">Questão {index + 1}</span>
-                          <span className={`px-3 py-1 rounded-full text-sm ${
+                          <span className="font-medium text-xs sm:text-base">Questão {index + 1}</span>
+                          <span className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm ${
                             selectedAnswers[index] !== undefined && 
                             parseInt(selectedAnswers[index]) === q.correctIndex
                               ? 'bg-green-100 text-green-800'
@@ -945,15 +955,15 @@ const Quiz = () => {
                               : 'Incorreto'}
                           </span>
                         </div>
-                        <p className="font-medium mb-3">{q.question}</p>
-                        <div className="space-y-2">
+                        <p className="font-medium mb-2 sm:mb-3 text-xs sm:text-sm">{q.question}</p>
+                        <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
                           <p className="text-green-600 font-medium">✓ Resposta correta: {q.options[q.correctIndex]}</p>
                           {selectedAnswers[index] !== undefined && 
                            parseInt(selectedAnswers[index]) !== q.correctIndex && (
                             <p className="text-red-600">✗ Sua resposta: {q.options[parseInt(selectedAnswers[index])]}</p>
                           )}
-                          <div className="mt-3 bg-gray-50 p-3 rounded-md">
-                            <p className="text-gray-700">{q.explanation}</p>
+                          <div className="mt-2 sm:mt-3 bg-gray-50 p-2 sm:p-3 rounded-md">
+                            <p className="text-gray-700 text-xs sm:text-sm">{q.explanation}</p>
                           </div>
                         </div>
                       </div>
@@ -963,7 +973,8 @@ const Quiz = () => {
 
                 <Button
                   onClick={handleRestart}
-                  className="mt-6 bg-medical-blue hover:bg-medical-blue/90"
+                  className="mt-4 sm:mt-6 bg-medical-blue hover:bg-medical-blue/90 text-xs sm:text-sm py-1 px-4 h-auto"
+                  size="sm"
                 >
                   Tentar Novamente
                 </Button>

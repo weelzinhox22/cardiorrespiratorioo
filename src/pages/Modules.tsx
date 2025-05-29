@@ -57,25 +57,25 @@ const Modules = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-medical-lightBlue via-white to-medical-lightTeal">
+    <div className="min-h-screen bg-gradient-to-br from-medical-lightBlue via-white to-medical-lightTeal pt-16">
       <Navigation />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        <div className="text-center mb-10 sm:mb-16 animate-fade-in">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             Módulos de{' '}
             <span className="bg-gradient-to-r from-medical-blue to-medical-teal bg-clip-text text-transparent">
               Especialização
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Aprofunde seus conhecimentos com conteúdo especializado em fisioterapia cardiorrespiratória.
           </p>
         </div>
 
         {/* Modules Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {modules.map((module) => {
             const Icon = module.icon;
             return (
@@ -93,11 +93,11 @@ const Modules = () => {
                     </div>
                   </div>
                   
-                  <CardTitle className="text-2xl font-bold text-gray-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-medical-blue group-hover:to-medical-teal group-hover:bg-clip-text transition-all duration-300 text-center">
+                  <CardTitle className="text-xl sm:text-2xl font-bold text-gray-900 group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-medical-blue group-hover:to-medical-teal group-hover:bg-clip-text transition-all duration-300 text-center">
                     {module.title}
                   </CardTitle>
                   
-                  <CardDescription className="text-gray-600 text-base leading-relaxed text-center">
+                  <CardDescription className="text-gray-600 text-sm sm:text-base leading-relaxed text-center">
                     {module.description}
                   </CardDescription>
                   
@@ -141,18 +141,18 @@ const Modules = () => {
 
         {/* Call to Action */}
         <div className="text-center animate-fade-in" style={{ animationDelay: '0.8s' }}>
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-medical-blue/10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 shadow-xl border border-medical-blue/10">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
               Pronto para testar seus conhecimentos?
             </h2>
-            <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 max-w-2xl mx-auto">
               Após estudar os módulos, faça nossa prova online com 40 questões especializadas 
               e receba feedback imediato sobre seu desempenho.
             </p>
             <Link to="/quiz">
-              <Button className="bg-gradient-to-r from-medical-blue to-medical-teal hover:from-medical-blue/90 hover:to-medical-teal/90 text-white px-8 py-4 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
+              <Button className="bg-gradient-to-r from-medical-blue to-medical-teal hover:from-medical-blue/90 hover:to-medical-teal/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 group">
                 Fazer Prova Online
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </Link>
           </div>

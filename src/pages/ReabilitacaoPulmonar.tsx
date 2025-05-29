@@ -5,29 +5,29 @@ import { Link } from 'react-router-dom';
 
 const ReabilitacaoPulmonar = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-medical-lightBlue via-white to-medical-lightTeal">
+    <div className="min-h-screen bg-gradient-to-br from-medical-lightBlue via-white to-medical-lightTeal pt-16">
       <Navigation />
       
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Header */}
-        <div className="mb-8 animate-fade-in">
-          <Link to="/modules" className="inline-flex items-center text-medical-blue hover:text-medical-teal transition-colors duration-300 mb-6">
+        <div className="mb-6 sm:mb-8 animate-fade-in">
+          <Link to="/modules" className="inline-flex items-center text-medical-blue hover:text-medical-teal transition-colors duration-300 mb-4 sm:mb-6">
             <ArrowLeft className="h-4 w-4 mr-2" />
             Voltar aos Módulos
           </Link>
           
-          <div className="flex items-center mb-6">
-            <div className="p-4 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 shadow-lg mr-6">
-              <Wind className="h-12 w-12 text-white" />
+          <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
+            <div className="p-3 sm:p-4 rounded-2xl bg-gradient-to-r from-blue-500 to-cyan-500 shadow-lg sm:mr-6 mb-4 sm:mb-0 mx-auto sm:mx-0 w-16 h-16 sm:w-auto sm:h-auto flex items-center justify-center">
+              <Wind className="h-8 w-8 sm:h-12 sm:w-12 text-white" />
             </div>
-            <div>
-              <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
+            <div className="text-center sm:text-left">
+              <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-2">
                 Reabilitação{' '}
                 <span className="bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent">
                   Pulmonar
                 </span>
               </h1>
-              <p className="text-xl text-gray-600">
+              <p className="text-base sm:text-xl text-gray-600">
                 Protocolos modernos de reabilitação respiratória para diferentes patologias pulmonares
               </p>
             </div>
@@ -37,12 +37,12 @@ const ReabilitacaoPulmonar = () => {
         {/* Content */}
         <Card className="border-0 shadow-lg bg-white/80 backdrop-blur-sm animate-slide-up">
           <CardHeader>
-            <CardTitle className="text-2xl font-bold text-gray-900">Conteúdo do Módulo</CardTitle>
+            <CardTitle className="text-xl sm:text-2xl font-bold text-gray-900">Conteúdo do Módulo</CardTitle>
           </CardHeader>
-          <CardContent className="prose prose-lg max-w-none">
+          <CardContent className="prose prose-sm sm:prose-lg max-w-none">
             <div className="space-y-6 text-gray-700 leading-relaxed">
               <section>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Definição e Abordagem Multidisciplinar</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">Definição e Abordagem Multidisciplinar</h3>
                 <p>
                   A reabilitação pulmonar é definida como uma terapia complexa e multidisciplinar, que oferece um tratamento amplo e integrado para pacientes com doenças pulmonares crônicas. Essa abordagem engloba tanto a terapia física quanto o suporte emocional, consistindo geralmente em uma combinação de exercícios e educação. A reabilitação pulmonar se caracteriza por uma continuidade multidimensional de serviços, direcionados tanto aos pacientes quanto às suas famílias, e é conduzida por uma equipe de especialistas que atuam de forma interdisciplinar. O propósito fundamental é alcançar e manter o máximo nível de independência e funcionalidade do indivíduo.
                 </p>
