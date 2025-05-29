@@ -125,7 +125,7 @@ const Quiz = () => {
       question: "Um paciente com doença pulmonar crônica apresenta o seguinte quadro: dispneia aos pequenos esforços, diminuição progressiva das atividades diárias e baixa tolerância ao exercício. Qual sequência melhor representa a intervenção terapêutica para quebrar este ciclo?",
       options: [
         "Repouso prolongado seguido de recuperação energética gradual, com ganho de peso supervisionado e retorno muito gradual às atividades cotidianas após completa recuperação do estado nutricional",
-        "Treinamento muscular progressivo → melhora da força → aumento da capacidade funcional → redução da dispneia → maior participação em atividades → melhor qualidade de vida",
+        "Treinamento muscular progressivo que promove melhora da força, resultando em aumento da capacidade funcional, levando à redução da dispneia, possibilitando maior participação em atividades e culminando em melhor qualidade de vida",
         "Suplementação nutricional intensiva com alto aporte calórico-proteico, seguida de ganho de massa muscular através de exercícios intensos e retorno imediato às atividades habituais para readaptação rápida",
         "Medicação broncodilatadora em doses máximas combinada com exercícios de alta intensidade desde o início para promover ganho rápido de condicionamento e adaptação ventilatória forçada"
       ],
@@ -148,7 +148,7 @@ const Quiz = () => {
       id: 4,
       question: "Durante uma sessão de reabilitação pós-operatória de cirurgia torácica, o paciente apresenta dificuldade respiratória e dor na região da incisão. Qual seria a melhor sequência de intervenções?",
       options: [
-        "Ajuste da analgesia → posicionamento adequado → exercícios respiratórios lentos → mobilização precoce progressiva → reavaliação dos sinais vitais",
+        "Ajuste da analgesia seguido de posicionamento adequado, progredindo para exercícios respiratórios lentos, passando para mobilização precoce progressiva e finalizando com reavaliação dos sinais vitais",
         "Suspensão imediata da sessão seguida de repouso absoluto por 48 horas, com encaminhamento médico para avaliação completa e possível ajuste medicamentoso antes de qualquer nova tentativa de intervenção fisioterapêutica",
         "Exercícios respiratórios intensos e vigorosos para promover expansão pulmonar máxima, seguidos de mobilização ativa vigorosa de tronco e membros superiores e alongamentos intensos da musculatura torácica",
         "Oxigenoterapia em alto fluxo (10-15 L/min) por máscara não-reinalante, seguida de repouso absoluto em decúbito dorsal e nova tentativa de mobilização apenas no dia seguinte, independentemente da evolução dos sintomas"
@@ -185,7 +185,7 @@ const Quiz = () => {
       question: "Durante exercício supervisionado, um paciente cardiopata apresenta sinais de intolerância como palidez, sudorese fria e tontura leve. Qual seria a sequência correta de ações nesta situação?",
       options: [
         "Redução parcial da velocidade ou intensidade do exercício e continuação da atividade sob observação, mantendo o estímulo de treinamento para promover adaptação cardiovascular progressiva apesar dos sintomas",
-        "Interrupção imediata → posicionamento adequado → monitorização de sinais vitais → avaliação de sintomas → documentação do evento → reavaliação da prescrição",
+        "Interrupção imediata seguida de posicionamento adequado, com monitorização de sinais vitais, avaliação de sintomas, documentação do evento e posterior reavaliação da prescrição",
         "Administração imediata de água ou bebida isotônica e continuação do exercício na mesma intensidade, considerando os sintomas como resposta adaptativa normal ao esforço que tende a se resolver com a hidratação adequada",
         "Aumento gradual da intensidade para promover adaptação cardiovascular rápida, considerando os sintomas como indicativos de necessidade de maior estímulo de treinamento para superar o limiar de condicionamento atual"
       ],
@@ -269,7 +269,7 @@ const Quiz = () => {
       question: "Um paciente com bronquiectasias apresenta secreção abundante, dispneia e limitação funcional. Qual sequência de técnicas respiratórias seria mais efetiva para este caso?",
       options: [
         "Apenas exercícios de respiração profunda em decúbito dorsal, sem técnicas específicas de higiene brônquica, focando exclusivamente no aumento do volume corrente e na expansão torácica global independentemente da presença de secreções",
-        "Drenagem postural → técnicas de expiração forçada → exercícios de expansão torácica → respiração com lábios franzidos",
+        "Drenagem postural, seguida de técnicas de expiração forçada, continuando com exercícios de expansão torácica e finalizando com respiração com lábios franzidos",
         "Tosse forçada contínua e vigorosa sem técnicas específicas de modulação do fluxo expiratório, mantendo esforço máximo em todas as expirações para eliminação de secreções, mesmo que cause broncoespasmo ou colapso de vias aéreas",
         "Exercícios de alta intensidade para eliminação de secreção através do aumento extremo da ventilação minuto, utilizando cargas elevadas para induzir taquipneia e hiperpneia, independentemente da tolerância do paciente ao esforço"
       ],
@@ -329,7 +329,7 @@ const Quiz = () => {
       question: "Um paciente com bronquiectasias difusas apresenta secreção espessa, fadiga muscular e baixa tolerância ao exercício. Qual seria a melhor sequência de intervenções para uma sessão de fisioterapia?",
       options: [
         "Exercícios intensos de alta demanda metabólica seguidos de hidratação oral mínima e técnicas de higiene brônquica realizadas apenas no final da sessão, quando o paciente já estiver fatigado para maximizar o esforço expiratório",
-        "Hidratação → técnicas de higiene brônquica → intervalo para descanso → exercícios de baixa intensidade → técnicas de conservação de energia",
+        "Hidratação inicial, seguida de técnicas de higiene brônquica, com posterior intervalo para descanso, continuando com exercícios de baixa intensidade e finalizando com técnicas de conservação de energia",
         "Apenas nebulização com solução salina hipertônica seguida de repouso prolongado em decúbito dorsal, sem mobilização ativa ou técnicas de higiene brônquica, para evitar qualquer esforço respiratório adicional",
         "Exercícios de alta intensidade sem técnicas prévias de higiene brônquica, utilizando treinamento aeróbico contínuo em intensidade próxima à máxima para induzir eliminação de secreções através da hiperpneia do exercício vigoroso"
       ],
@@ -467,6 +467,78 @@ const Quiz = () => {
       ],
       correct: 1,
       explanation: "Na insuficiência cardíaca com fração de ejeção preservada (ICFEP), o principal problema fisiopatológico é a disfunção diastólica com enchimento ventricular comprometido e hipertensão pulmonar secundária. A monitorização rigorosa da pressão arterial é fundamental, pois muitos pacientes têm hipertensão associada. O exercício intervalado permite períodos de recuperação que favorecem o retorno venoso e reduzem a congestão pulmonar. Os períodos adequados de recuperação são essenciais para evitar sobrecarga cardiopulmonar e otimizar a tolerância ao exercício."
+    },
+    {
+      id: 31,
+      question: "De acordo com a classificação GOLD para DPOC, um paciente com VEF1 de 45% do previsto e história de múltiplas exacerbações no último ano seria classificado como:",
+      options: [
+        "GOLD 1, grupo A",
+        "GOLD 2, grupo B",
+        "GOLD 3, grupo D",
+        "GOLD 4, grupo C"
+      ],
+      correct: 2,
+      explanation: "Este paciente apresenta VEF1 de 45% do previsto, o que o classifica como GOLD 3 (grave: VEF1 entre 30% e 50% do previsto). A presença de múltiplas exacerbações no último ano o coloca no grupo D (alto risco de exacerbações). A classificação GOLD combina a limitação do fluxo aéreo (1-4) com a avaliação de sintomas e risco de exacerbações (A-D), resultando em GOLD 3D para este caso."
+    },
+    {
+      id: 32,
+      question: "Na reabilitação pulmonar de um paciente com DPOC classificado como GOLD 2, mas com sintomas mínimos (grupo A), qual abordagem seria mais apropriada?",
+      options: [
+        "Programa intensivo com exercícios de alta intensidade e longa duração, considerando que a capacidade funcional está preservada e a obstrução é apenas moderada",
+        "Treinamento de força com cargas máximas para todos os grupos musculares, priorizando hipertrofia para compensar a perda muscular futura",
+        "Programa de educação sobre a doença e exercícios de baixa a moderada intensidade, com ênfase na manutenção da capacidade funcional",
+        "Apenas uso de broncodilatadores quando necessário, sem programa estruturado de exercícios, já que os sintomas são mínimos e não justificam intervenção física"
+      ],
+      correct: 2,
+      explanation: "Pacientes com DPOC GOLD 2 grupo A apresentam obstrução moderada (50% ≤ VEF1 < 80% do previsto) com poucos sintomas e baixo risco de exacerbações. Mesmo com sintomas mínimos, a reabilitação pulmonar é benéfica para manter a capacidade funcional e prevenir a progressão da doença. O programa deve incluir educação sobre a doença (conhecimento sobre DPOC, técnicas de conservação de energia, reconhecimento de exacerbações) e exercícios de baixa a moderada intensidade que não provoquem sintomas significativos, com progressão gradual conforme tolerância."
+    },
+    {
+      id: 33,
+      question: "Um paciente com DPOC apresenta VEF1 de 28% do previsto, CAT score de 25 pontos e 3 exacerbações no último ano. Segundo a classificação GOLD atualizada, como seria classificado?",
+      options: [
+        "GOLD 1 grupo D",
+        "GOLD 2 grupo D",
+        "GOLD 3 grupo D",
+        "GOLD 4 grupo D"
+      ],
+      correct: 3,
+      explanation: "O paciente apresenta VEF1 de 28% do previsto, o que o classifica como GOLD 4 (muito grave: VEF1 < 30% do previsto). O CAT score de 25 indica sintomas significativos (CAT ≥ 10) e as 3 exacerbações no último ano representam alto risco de exacerbações (≥ 2 exacerbações ou ≥ 1 exacerbação levando à hospitalização). Portanto, este paciente é classificado como GOLD 4 grupo D, indicando obstrução muito grave com muitos sintomas e alto risco de exacerbações."
+    },
+    {
+      id: 34,
+      question: "De acordo com a classificação funcional da New York Heart Association (NYHA), um paciente com insuficiência cardíaca que apresenta dispneia e fadiga aos esforços moderados, como subir mais de um lance de escadas, mas sem sintomas em repouso, seria classificado como:",
+      options: [
+        "NYHA I",
+        "NYHA II",
+        "NYHA III",
+        "NYHA IV"
+      ],
+      correct: 1,
+      explanation: "A classificação NYHA II corresponde a pacientes com limitação física leve. Estes pacientes sentem-se confortáveis em repouso, mas atividades físicas comuns (como subir escadas) causam fadiga, palpitação, dispneia ou angina. Os sintomas aparecem aos esforços moderados, diferente da NYHA I (sem limitação) ou NYHA III (sintomas aos pequenos esforços) e NYHA IV (sintomas em repouso)."
+    },
+    {
+      id: 35,
+      question: "Na prescrição de exercícios para um paciente com insuficiência cardíaca NYHA III, qual parâmetro seria mais adequado para monitorar a intensidade do treinamento?",
+      options: [
+        "Frequência cardíaca de reserva entre 70-85%, visando adaptações cardiovasculares máximas",
+        "Escala de Borg entre 11-13 (leve a moderado) ou frequência cardíaca de reserva entre 40-60%",
+        "Apenas percepção subjetiva do paciente, sem uso de escalas ou monitorização objetiva, confiando na autorregulação natural do esforço",
+        "Atingir frequência cardíaca máxima em cada sessão de treinamento para estimular remodelamento ventricular positivo"
+      ],
+      correct: 1,
+      explanation: "Pacientes com insuficiência cardíaca NYHA III apresentam limitação física moderada, com sintomas aos pequenos esforços. A prescrição de exercícios deve ser cautelosa, utilizando parâmetros como a escala de Borg entre 11-13 (esforço leve a moderado) ou frequência cardíaca de reserva entre 40-60%. Intensidades mais elevadas podem causar descompensação e não são seguras para esta população. O monitoramento objetivo é essencial, não devendo confiar apenas na percepção subjetiva sem parâmetros."
+    },
+    {
+      id: 36,
+      question: "Um paciente com insuficiência cardíaca NYHA IV deseja iniciar um programa de reabilitação cardiovascular. Qual seria a abordagem mais adequada?",
+      options: [
+        "Contraindicar qualquer forma de exercício físico estruturado, mantendo apenas atividades básicas de vida diária com assistência",
+        "Prescrever exercícios de alta intensidade com monitorização contínua para induzir adaptações cardiovasculares rápidas",
+        "Iniciar exercícios físicos apenas após compensação clínica e melhora para NYHA III, com programa hospitalar supervisionado",
+        "Recomendar exercícios domiciliares sem supervisão, com automonitoramento dos sintomas pelo próprio paciente"
+      ],
+      correct: 2,
+      explanation: "Pacientes com insuficiência cardíaca NYHA IV apresentam limitação física grave, com sintomas mesmo em repouso ou aos mínimos esforços. O exercício físico formal é geralmente contraindicado neste estágio, até que ocorra compensação clínica e melhora para pelo menos NYHA III. Após a melhora, um programa hospitalar supervisionado pode ser iniciado, com monitorização rigorosa. A prescrição de exercícios de alta intensidade ou sem supervisão é perigosa e potencialmente fatal nestes pacientes."
     }
   ];
 
