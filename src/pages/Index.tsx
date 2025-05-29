@@ -1,7 +1,7 @@
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { BookOpen, Brain, MessageCircle } from 'lucide-react';
+import { BookOpen, Brain, MessageCircle, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { 
   Dialog,
@@ -9,8 +9,10 @@ import {
   DialogHeader,
   DialogTitle, 
   DialogDescription,
-  DialogFooter
+  DialogFooter,
+  DialogClose
 } from '@/components/ui/dialog';
+import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { Button } from '@/components/ui/button';
 
 const Index = () => {
@@ -47,37 +49,61 @@ const Index = () => {
       
       {/* Popup de Aviso */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle className="text-xl sm:text-2xl font-bold text-center text-medical-blue">
-              Informação Importante
-            </DialogTitle>
-            <DialogDescription className="text-center pt-4">
-              <p className="mb-4 text-base text-gray-700">
-                Todo o conteúdo deste site foi retirado das aulas da professora <span className="font-semibold">Eloá Queiroz</span>.
-              </p>
-              <p className="text-base text-gray-700">
-                Em caso de dúvidas, questões incorretas ou problemas, entre em contato:
-              </p>
-            </DialogDescription>
-          </DialogHeader>
-          <div className="flex justify-center py-2">
-            <Button 
-              onClick={handleWhatsAppContact}
-              className="bg-green-600 hover:bg-green-700 text-white flex items-center gap-2"
-            >
-              <MessageCircle size={18} />
-              Contato via WhatsApp (71) 99137-3142
-            </Button>
+        <DialogContent className="sm:max-w-md border-0 shadow-xl rounded-xl overflow-hidden p-0">
+          {/* Cabeçalho com gradiente */}
+          <div className="bg-gradient-to-r from-medical-blue to-medical-teal p-6 text-white">
+            <DialogHeader>
+              <DialogTitle className="text-xl sm:text-2xl font-bold text-center">
+                Informação Importante
+              </DialogTitle>
+            </DialogHeader>
           </div>
-          <DialogFooter className="sm:justify-center mt-4">
+          
+          {/* Conteúdo com fundo claro */}
+          <div className="bg-white p-6">
+            <DialogDescription className="text-center pt-2">
+              <div className="flex flex-col items-center mb-6">
+                <div className="bg-blue-50 p-3 rounded-full mb-4">
+                  <BookOpen className="h-8 w-8 text-medical-blue" />
+                </div>
+                <p className="text-base font-medium text-gray-800 mb-2">
+                  Todo o conteúdo deste site foi retirado das aulas da 
+                  <span className="text-medical-teal font-bold"> Profª. Eloá Queiroz</span>.
+                </p>
+                <div className="w-16 h-1 bg-medical-blue rounded-full my-3"></div>
+                <p className="text-base text-gray-700">
+                  Em caso de dúvidas, questões incorretas ou problemas:
+                </p>
+              </div>
+
+              {/* Botão de contato */}
+              <Button 
+                onClick={handleWhatsAppContact}
+                className="bg-green-600 hover:bg-green-700 text-white flex items-center gap-2 w-full py-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg"
+              >
+                <MessageCircle size={20} />
+                <span className="font-medium">Contato via WhatsApp</span>
+                <span className="font-bold ml-1">(71) 99137-3142</span>
+              </Button>
+            </DialogDescription>
+          </div>
+          
+          {/* Rodapé */}
+          <div className="border-t border-gray-100 p-4 bg-gray-50 flex justify-center">
             <Button 
               onClick={() => setIsDialogOpen(false)}
               variant="outline"
+              className="px-8 border-medical-blue text-medical-blue hover:bg-medical-blue hover:text-white transition-all duration-300"
             >
               Entendi
             </Button>
-          </DialogFooter>
+          </div>
+          
+          {/* Botão de fechar no canto superior direito */}
+          <DialogClose className="absolute right-4 top-4 rounded-full p-1 bg-white/20 text-white hover:bg-white/30 transition-colors focus:outline-none focus:ring-2 focus:ring-white/80">
+            <X className="h-4 w-4" />
+            <span className="sr-only">Fechar</span>
+          </DialogClose>
         </DialogContent>
       </Dialog>
       
